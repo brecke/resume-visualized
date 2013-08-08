@@ -1,0 +1,14 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+html, body {
+  margin: 5px;
+}
+
+#container {
+	width: 100%;
+	margin: 0 auto;
+}
