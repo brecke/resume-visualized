@@ -11,7 +11,7 @@ Some vibrant colors for your choosing:
 */
 
 
-var jobs = [
+jobs = [
   {
     "name": "Java programmer",
     "occupation": [

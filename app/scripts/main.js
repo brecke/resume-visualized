@@ -16,11 +16,9 @@ var leftPosition = horizontalGutter / 2;
 var verticalGutter = 50;
 var topPosition = 0 + verticalGutter / 2;
 var cellHeight = 50;
-var initialYear = 2006;
-var year = initialYear;
-var currentYear = new Date().getFullYear();
 var fontSize = 14;
 var black = "#2d2d2d";
+var year = initialYear;
 
 /*
 /* year top corner
@@ -125,27 +123,4 @@ for (var i = 0; i < jobs.length; i++) {
 	
 	// break;
 	lastPosition = lastPosition + rect.getWidth() + horizontalGutter;
-}
-
-
-function newFilledArray(len, val) {
-    var rv = new Array(len);
-    while (--len >= 0) {
-        rv[len] = val;
-    }
-    return rv;
-}
-
-// testing
-var checkPercentages = newFilledArray((currentYear - initialYear + 1), 0)
-for (var i = 0; i < jobs.length; i++) {
-	job = jobs[i];
-	
-	for (var j = 0; j < (currentYear-initialYear + 1); j++) {
-		checkPercentages[j] += job.occupation[j];
-	}
-}
-
-for (var i = 0; i < checkPercentages.length; i++) {
-	console.log("=> " + checkPercentages[i]);
 }
