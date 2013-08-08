@@ -1,85 +1,40 @@
 /*
-Some vibrant colors for your choosing:
-* light green: #91c847
-* dark green: #09803b
-* light blue: #2cade2
-* dark blue: #187bbf
-* light orange: #f79929
-* dark orange: #f26336
-* pink: #ee2d84
-* dark red: #c22938
-*/
+ * Some vibrant colors for your choosing from http://flatuicolors.com
+ */
 
+lightGreen 		= "#91c847"
+darkGreen 		= "#09803b"
+lightBlue 		= "#2cade2"
+darkBlue 		= "#187bbf"
+lightOrange 	= "#f79929"
+darkOrange 		= "#f26336"
+pink 			= "#ee2d84"
+darkRed 		= "#c22938"
 
 jobs = [
   {
     "name": "Java programmer",
-    "occupation": [
-      100,
-      100,
-      80,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "mainColor": "#91c847"
+    "occupation": [ 100, 100, 60, 0, 0, 0, 0, 0 ],
+    "mainColor": lightGreen
   },
   {
     "name": "Rails programmer",
-    "occupation": [
-      0,
-      0,
-      10,
-      50,
-      40,
-      0,
-      0,
-      0
-    ],
-    "mainColor": "#91c847"
+    "occupation": [ 0, 0, 30, 50, 40, 0, 0, 0 ],
+    "mainColor": lightGreen
   },
   {
     "name": "Project manager",
-    "occupation": [
-      0,
-      0,
-      10,
-      20,
-      30,
-      10,
-      20,
-      30
-    ],
-    "mainColor": "#2cade2"
+    "occupation": [ 0, 0, 10, 20, 30, 10, 20, 30 ],
+    "mainColor": lightBlue
   },
   {
     "name": "Technical Lead",
-    "occupation": [
-      0,
-      0,
-      0,
-      30,
-      30,
-      80,
-      60,
-      40
-    ],
-    "mainColor": "#f79929"
+    "occupation": [ 0, 0, 0, 30, 30, 80, 60, 40 ],
+    "mainColor": lightOrange
   },
   {
     "name": "Product manager",
-    "occupation": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      10,
-      20,
-      30
-    ],
-    "mainColor": "#ee2d84"
+    "occupation": [ 0, 0, 0, 0, 0, 10, 20, 30 ],
+    "mainColor": pink
   }  
 ]
