@@ -283,7 +283,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'compass',
+                // 'compass',
                 'coffee:dist'
             ],
             test: [
@@ -291,7 +291,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'coffee',
-                'compass',
+                // 'compass',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
