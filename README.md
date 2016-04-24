@@ -1,6 +1,6 @@
 # Resume visualized
 
-![Resume visualized](https://cld.pt/dl/download/8635f3e6-8a1f-456d-bcd0-d8e858b664f1/Screen%20Shot%202015-10-19%20at%2018.03.36.png)
+![Resume visualized](https://cld.pt/dl/download/0e6741a6-9645-468e-b6a2-860536d9773f/Screen%20Shot%202016-04-24%20at%2011.11.28.png)
 
 This is a simple experiment to try to visualize my job positions and expertise throughout the years in a simple chart using HTML canvas. It is heavily inspired in a TED Global Oxford talk by David McCandless. You may check it [here](http://www.informationisbeautiful.net/2010/the-beauty-of-data-visualization/).
 
