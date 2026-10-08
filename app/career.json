@@ -1,12 +1,12 @@
 {
   "coverage": { "startYear": 2006, "endYear": 2016 },
   "disciplines": [
-    { "id": "java", "name": "Java programmer", "color": "#91c847" },
-    { "id": "rails", "name": "Rails programmer", "color": "#91c847" },
+    { "id": "java", "name": "Java developer", "color": "#91c847" },
+    { "id": "rails", "name": "Rails developer", "color": "#91c847" },
     { "id": "project-management", "name": "Project manager", "color": "#2cade2" },
     { "id": "architecture", "name": "Software architect", "color": "#f79929" },
     { "id": "python", "name": "Python developer", "color": "#f26336" },
-    { "id": "full-stack-js", "name": "Full-stack js developer", "color": "#c22938" }
+    { "id": "full-stack-js", "name": "Full-stack JavaScript developer", "color": "#c22938" }
   ],
   "years": [
     { "year": 2006, "complete": true, "allocations": { "java": 100, "rails": 0, "project-management": 0, "architecture": 0, "python": 0, "full-stack-js": 0 } },

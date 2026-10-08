@@ -77,6 +77,37 @@ p {
     font-size: 1.125rem;
 }
 
+.coverage-note {
+    max-width: 78ch;
+    color: var(--muted);
+}
+
+.turning-points {
+    max-width: 78ch;
+    margin-top: var(--space-4);
+}
+
+.turning-points ol {
+    padding-inline-start: 1.5rem;
+}
+
+.turning-points li {
+    margin-bottom: var(--space-2);
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.primary-contact {
+    padding-inline: var(--space-2);
+    color: #fff;
+    background: var(--header);
+}
+
 .legend {
     margin-bottom: var(--space-2);
 }

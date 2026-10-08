@@ -6,7 +6,7 @@ Make this a distinctive, trustworthy, shareable visual résumé—not a generic 
 
 The first release is Miguel Laginha's personal page. Keep the data easy to replace, but do not turn the project into a résumé builder, hosted service, or component library without an actual need.
 
-Track execution in [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1). Its native sub-issues are the source of truth for task checklists, progress, and acceptance criteria. This document retains historical assessment and direction; foundation and responsive design are implemented locally, with publication status tracked in #2 and #3.
+Track execution in [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1). Its native sub-issues are the source of truth for task checklists, progress, and acceptance criteria. This document retains historical assessment and direction; foundation, responsive design, and approved copy are implemented locally, with publication status tracked in #2–#4.
 
 ## Historical baseline — before the foundation cutover
 
@@ -39,6 +39,13 @@ Issue #3 adds a restrained editorial shell, one token-based theme, a compact int
 
 Actual phone, laptop, wide-screen, resize, native touch/keyboard/hover, unknown/partial, script-disabled contact, contrast and achromatopsia checks passed. 200% reflow was checked through CSS viewport/device-scale emulation. Chromium's actual accessibility tree confirmed semantic reading order; no auditory screen-reader session or accessibility certification is claimed. Stable references are in `images/desktop.webp` and `images/mobile.webp`. Career facts were unchanged.
 
+## Copy and career narrative implementation
+
+Issue #4 separates the current owner-approved staff-engineer introduction from historical 2006–2016 allocations. Biography and email/current-profile routes are sourced from [Miguel's published profile](https://miguellaginha.com/); the owner confirmed estimated working-time shares and standardized discipline display names. Three turning points describe only existing records, without invented employers, projects or later work. The fixed content-update date is 2026-10-08, not a build timestamp.
+
+Typecheck, the existing data regression and production build passed. Actual desktop/phone production checks exercised identity/metric/coverage/contact discovery, keyboard/touch details, unchanged numeric allocations, script-disabled content, a future clock and the real current-profile destination. Updated references remain in `images/`. This is structured content/interaction verification, not an independent human study; no email was sent. Public deployment and remote CI remain untested.
+
+
 
 ## Recommended technical direction
 
@@ -64,12 +71,10 @@ Phases 1–4 define the first release. Phase 5 is optional and does not block pu
 
 ## Owner input needed before publication
 
-The metric and 2015 correction are resolved. Remaining publication decisions:
+The metric, estimate wording, 2015 correction, current introduction, email/profile routes, display names and historical turning points are resolved. Current copy explicitly covers 2006–2016 only; later allocations require new owner-supplied records.
 
-1. Should the public release retain the existing historical period, or include owner-verified data since 2016?
-2. What current introduction, career highlights, contact destination, and résumé/profile link may be published?
-3. What public URL/hosting account and reuse license should the project use?
+The public URL/hosting account and reuse-license decision remain for #5. Do not infer those decisions from a successful local preview.
 
 ## Next
 
-Publish the verified foundation and design through the owner-approved contribution path, tracked in #2 and #3. Next is owner-reviewed copy and career narrative (#4), followed by production sharing and hosting (#5). Keep the recognizable matrix; do not turn the remaining revamp into another framework migration.
+Publish the verified foundation, design and copy through the owner-approved contribution path, tracked in #2–#4, then complete production sharing and hosting (#5). Keep the recognizable matrix; do not turn release work into another framework migration.
