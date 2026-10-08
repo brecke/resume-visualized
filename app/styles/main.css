@@ -1,7 +1,25 @@
 :root {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
-    background: #fafafa;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-display: Georgia, "Times New Roman", serif;
+    --surface: #f7f5ef;
+    --text: #24282b;
+    --muted: #555049;
+    --rule: #d0cdc7;
+    --header: #24282b;
+    --focus: #075d9b;
+    --allocation-empty: #fff;
+    --unknown-fill: #ece9e3;
+    --legend-color: #555049;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
+    --space-4: 4rem;
+    --year-column: 7rem;
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--surface);
+    line-height: 1.6;
+    color-scheme: light;
 }
 
 * {
@@ -9,82 +27,301 @@
 }
 
 body {
-    margin: 10px;
+    margin: 0;
 }
 
-#legend,
-#scroll-help {
-    max-width: 70ch;
-    margin: 12px 15px;
-    line-height: 1.5;
+main {
+    max-width: 82rem;
+    margin-inline: auto;
+    padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem) var(--space-3);
 }
 
-#scroll-help {
+h1,
+h2 {
+    font-family: var(--font-display);
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+h1 {
+    margin: var(--space-1) 0 var(--space-2);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    letter-spacing: -0.035em;
+}
+
+h2 {
+    margin: 0 0 var(--space-2);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+    margin: 0 0 var(--space-2);
+}
+
+.intro {
+    max-width: 48rem;
+    margin-bottom: var(--space-4);
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.intro-text {
+    max-width: 50ch;
+    font-size: 1.125rem;
+}
+
+.legend {
+    margin-bottom: var(--space-2);
+}
+
+#legend {
+    max-width: 78ch;
+}
+
+.legend-samples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.legend-samples li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.legend-swatch {
+    --discipline-color: var(--legend-color);
+    width: 1.5rem;
+    height: 1rem;
+    border: 1px solid var(--muted);
+}
+
+#scroll-help,
+.script-note {
+    max-width: 85ch;
+    color: var(--muted);
     font-size: 0.875rem;
 }
 
 .matrix-scroll {
     max-width: 100%;
-    overflow-x: auto;
+    max-height: min(44rem, 75svh);
+    overflow: auto;
+    scroll-padding-block-start: 5.5rem;
+    border-block: 1px solid var(--rule);
 }
 
-.matrix-scroll:focus-visible {
-    outline: 2px solid #187bbf;
-    outline-offset: -2px;
+@media (min-width: 64rem) {
+    .matrix-scroll {
+        max-height: none;
+    }
 }
 
-table {
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.matrix-scroll:focus-visible,
+.year-button:focus-visible {
+    outline-offset: -3px;
+}
+
+#career-table {
+    width: 100%;
+    min-width: 64rem;
+    table-layout: fixed;
     border-collapse: separate;
-    border-spacing: 30px 10px;
-    font-family: Verdana, sans-serif;
-    font-size: 14px;
+    border-spacing: 0.55rem 0.55rem;
+    font-size: 0.875rem;
 }
 
 caption {
-    padding: 10px 30px;
-    color: #24282b;
-    font-weight: bold;
+    padding: var(--space-2) 0.55rem var(--space-1);
+    color: var(--muted);
+    font-weight: 600;
     text-align: left;
 }
 
 th,
 td {
-    padding: 0 15px;
     text-align: center;
-    white-space: nowrap;
 }
 
 thead th {
-    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: 5rem;
+    padding: var(--space-1) 0.65rem;
+    border-top: 0.25rem solid var(--discipline-color, var(--header));
     color: #fff;
-    background: #2d2d2d;
-    font-weight: normal;
+    background: var(--header);
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+}
+
+thead th:first-child {
+    left: 0;
+    z-index: 3;
+    width: var(--year-column);
 }
 
 tbody th {
-    color: #24282b;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    padding: 0;
+    color: var(--text);
+    background: var(--surface);
     font-weight: normal;
-    text-align: right;
+}
+
+.year-button {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: var(--space-1);
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+}
+
+.year-button[aria-expanded="true"] {
+    color: #fff;
+    background: var(--header);
+}
+
+.year-button[aria-expanded="true"]:focus-visible {
+    outline-color: #fff;
 }
 
 .year-status {
     display: block;
     font-size: 0.75rem;
+    font-weight: normal;
 }
 
 td {
-    height: 40px;
-    background: color-mix(in srgb, var(--discipline-color) var(--allocation), #fff);
+    height: 3rem;
+    padding: 0.25rem;
+}
+
+td,
+.legend-swatch {
+    background: color-mix(in srgb, var(--discipline-color) var(--allocation), var(--allocation-empty));
 }
 
 .allocation {
     display: inline-block;
-    padding: 2px 5px;
-    color: #24282b;
-    background: #fff;
+    padding: 0.125rem 0.35rem;
+    color: var(--text);
+    background: var(--allocation-empty);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+td.unknown,
+.legend-swatch.unknown {
+    background: repeating-linear-gradient(135deg, var(--rule) 0 4px, var(--unknown-fill) 4px 8px);
+}
+
+#year-detail {
+    margin-top: var(--space-3);
+    border-block: 1px solid var(--rule);
+    scroll-margin-block: var(--space-2);
+}
+
+#detail-summary {
+    min-height: 44px;
+    padding: 0.75rem 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#detail-context {
+    max-width: 78ch;
+    margin-top: var(--space-1);
+    color: var(--muted);
+}
+
+#detail-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: var(--space-2) var(--space-3);
+    margin: var(--space-2) 0 var(--space-3);
+}
+
+#detail-values dt {
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+#detail-values dd {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
     font-variant-numeric: tabular-nums;
 }
 
-td.unknown {
-    background: repeating-linear-gradient(135deg, #e6e6e6 0 4px, #fafafa 4px 8px);
+.contact {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--rule);
+}
+
+.contact h2 {
+    margin-bottom: var(--space-1);
+}
+
+a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: 44px;
+    color: var(--text);
+    text-underline-offset: 0.2em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .year-button:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+}
+
+@media (forced-colors: active) {
+    td,
+    .legend-swatch {
+        border: 1px solid CanvasText;
+    }
+
+    .year-button[aria-expanded="true"] {
+        color: HighlightText;
+        background: Highlight;
+        forced-color-adjust: none;
+    }
+
+    .year-button[aria-expanded="true"]:focus-visible {
+        outline-color: HighlightText;
+    }
 }

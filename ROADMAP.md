@@ -6,7 +6,7 @@ Make this a distinctive, trustworthy, shareable visual résumé—not a generic 
 
 The first release is Miguel Laginha's personal page. Keep the data easy to replace, but do not turn the project into a résumé builder, hosted service, or component library without an actual need.
 
-Track execution in [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1). Its native sub-issues are the source of truth for task checklists, progress, and acceptance criteria. This document retains historical assessment and direction; the foundation cutover is implemented, with publication status tracked in #2.
+Track execution in [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1). Its native sub-issues are the source of truth for task checklists, progress, and acceptance criteria. This document retains historical assessment and direction; foundation and responsive design are implemented locally, with publication status tracked in #2 and #3.
 
 ## Historical baseline — before the foundation cutover
 
@@ -31,7 +31,14 @@ Issue #2 replaces the legacy pipeline with Vite, vanilla TypeScript, npm, one ap
 
 The owner confirmed **exclusive working-time shares**, not proficiency, and corrected 2015 architecture from 70% to 50% (20 percentage points), leaving other allocations intact. Explicit records retain 2006–2016 coverage. Complete years total 100%; incomplete years may contain nulls or partial totals at most 100%. Unknown is distinct from recorded zero, and missing covered years require explicit unknown records.
 
-Local installation, type checking, the deterministic data regression, and production build passed. Real browser checks exercised desktop/390px phone layout, keyboard scrolling, resize, all recorded values and zero/full color endpoints, a future clock, unknown/partial data, and actual production assets at `/resume-visualized/`. Remote CI and deployment were not exercised. These results replace the foundation failures above; they do not complete the design, copy, or release phases.
+Local installation, type checking, the deterministic data regression, and production build passed. Real browser checks exercised desktop/390px phone layout, keyboard scrolling, resize, all recorded values and zero/full color endpoints, a future clock, unknown/partial data, and actual production assets at `/resume-visualized/`. Remote CI and deployment were not exercised. These results replace the foundation failures above; they do not complete the owner-reviewed copy or release phases.
+
+## Responsive design implementation
+
+Issue #3 adds a restrained editorial shell, one token-based theme, a compact intensity guide, comparable columns, and native year details. The matrix retains its historical palette and exact text. Phone scrolling keeps year labels/headers visible; desktop renders its full content height. A real backward-Tab failure under sticky headers was fixed by reserving scroll padding in the shared region.
+
+Actual phone, laptop, wide-screen, resize, native touch/keyboard/hover, unknown/partial, script-disabled contact, contrast and achromatopsia checks passed. 200% reflow was checked through CSS viewport/device-scale emulation. Chromium's actual accessibility tree confirmed semantic reading order; no auditory screen-reader session or accessibility certification is claimed. Stable references are in `images/desktop.webp` and `images/mobile.webp`. Career facts were unchanged.
+
 
 ## Recommended technical direction
 
@@ -65,4 +72,4 @@ The metric and 2015 correction are resolved. Remaining publication decisions:
 
 ## Next
 
-Publish the verified foundation change through the owner-approved contribution path and track it in #2. Refine design (#3) and owner-reviewed copy (#4), then complete production sharing and hosting checks (#5). Keep the recognizable matrix; do not turn the remaining revamp into another framework migration.
+Publish the verified foundation and design through the owner-approved contribution path, tracked in #2 and #3. Next is owner-reviewed copy and career narrative (#4), followed by production sharing and hosting (#5). Keep the recognizable matrix; do not turn the remaining revamp into another framework migration.

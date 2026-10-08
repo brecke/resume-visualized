@@ -3,24 +3,54 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Resume visualized</title>
+        <title>Miguel Laginha — Resume visualized</title>
+        <meta name="description" content="Miguel Laginha’s visual résumé of recorded working-time shares across disciplines, 2006–2016.">
         <link rel="stylesheet" href="./styles/main.css">
         <script type="module" src="./scripts/main.ts"></script>
     </head>
     <body>
         <main>
-            <p id="legend">
-                Percentages are exclusive shares of working time, not proficiency.
-                White means a recorded 0%; full discipline color means 100%.
-                Hatched cells marked “Unknown” have no recorded value.
-            </p>
-            <p id="scroll-help">On narrow screens, scroll the table horizontally to see every discipline.</p>
-            <div class="matrix-scroll" tabindex="0" role="region" aria-labelledby="matrix-caption" aria-describedby="scroll-help">
-                <table id="career-table" aria-describedby="legend">
-                    <caption id="matrix-caption">Working-time shares</caption>
-                </table>
-            </div>
-            <noscript>This matrix requires JavaScript to display its recorded allocations.</noscript>
+            <header class="intro">
+                <p class="eyebrow">Visual résumé · 2006–2016</p>
+                <h1>Miguel Laginha</h1>
+                <p class="intro-text">A historical view of working time, year by year and discipline by discipline.</p>
+            </header>
+
+            <section aria-labelledby="matrix-heading">
+                <h2 id="matrix-heading">Years × disciplines</h2>
+                <div class="legend">
+                    <p id="legend">
+                        Percentages are exclusive shares of working time, not proficiency.
+                        Column labels identify disciplines, retaining their historical colors; intensity shows the share.
+                        White means a recorded 0%; full discipline color means 100%.
+                        Hatched cells marked “Unknown” have no recorded value.
+                    </p>
+                    <ul class="legend-samples" aria-label="Intensity guide">
+                        <li><span class="legend-swatch" style="--allocation: 0%" aria-hidden="true"></span>0%</li>
+                        <li><span class="legend-swatch" style="--allocation: 50%" aria-hidden="true"></span>50%</li>
+                        <li><span class="legend-swatch" style="--allocation: 100%" aria-hidden="true"></span>100%</li>
+                        <li><span class="legend-swatch unknown" aria-hidden="true"></span>Unknown</li>
+                    </ul>
+                </div>
+                <p id="scroll-help">Scroll the matrix to reach every year and discipline. With a keyboard, focus the matrix and use the arrow keys. Select a year for its exact values and recorded context.</p>
+                <div class="matrix-scroll" tabindex="0" role="region" aria-labelledby="matrix-caption" aria-describedby="scroll-help">
+                    <table id="career-table" aria-describedby="legend">
+                        <caption id="matrix-caption">Working-time shares · 2006–2016</caption>
+                    </table>
+                </div>
+                <noscript><p class="script-note">The matrix requires JavaScript to display its recorded allocations. This résumé covers 2006–2016 only.</p></noscript>
+
+                <details id="year-detail" hidden>
+                    <summary id="detail-summary"><span id="detail-heading">Year details</span></summary>
+                    <p id="detail-context"></p>
+                    <dl id="detail-values"></dl>
+                </details>
+            </section>
+
+            <footer class="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact</h2>
+                <a href="https://github.com/brecke">Find Miguel on GitHub <span aria-hidden="true">↗</span></a>
+            </footer>
         </main>
     </body>
 </html>
