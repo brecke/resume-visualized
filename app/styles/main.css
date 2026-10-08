@@ -356,3 +356,147 @@ a {
         outline-color: HighlightText;
     }
 }
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+
+    :root {
+        --surface: #fff;
+        --year-column: 16mm;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    body {
+        font-size: 10pt;
+        line-height: 1.35;
+    }
+
+    main {
+        max-width: none;
+        padding: 0;
+    }
+
+    h1 {
+        margin: 1mm 0 2mm;
+        font-size: 28pt;
+    }
+
+    h2 {
+        margin-bottom: 2mm;
+        font-size: 14pt;
+        break-after: avoid;
+    }
+
+    p {
+        margin-bottom: 2mm;
+    }
+
+    .intro {
+        max-width: none;
+        margin-bottom: 4mm;
+        break-inside: avoid;
+    }
+
+    .intro-text {
+        max-width: none;
+        font-size: 11pt;
+    }
+
+    .coverage-note,
+    #legend {
+        max-width: none;
+    }
+
+    .eyebrow,
+    .legend-samples {
+        font-size: 9pt;
+    }
+
+    .legend {
+        margin-bottom: 2mm;
+        break-inside: avoid;
+    }
+
+    #scroll-help,
+    #year-detail,
+    .turning-points,
+    .contact > p:not(.contact-actions),
+    .contact a [aria-hidden="true"] {
+        display: none;
+    }
+
+    .matrix-scroll {
+        max-width: none;
+        max-height: none;
+        overflow: visible;
+        border: 0;
+    }
+
+    #career-table {
+        min-width: 0;
+        border-spacing: 1mm 0.8mm;
+        font-size: 9pt;
+    }
+
+    caption {
+        padding: 1mm;
+    }
+
+    #career-table tr {
+        break-inside: avoid;
+    }
+
+    thead th,
+    tbody th {
+        position: static;
+    }
+
+    thead th {
+        height: auto;
+        padding: 2mm 1mm;
+        color: var(--text);
+        background: var(--surface);
+    }
+
+    td {
+        height: 6mm;
+        padding: 0.5mm;
+    }
+
+    .year-button,
+    .year-button[aria-expanded="true"] {
+        min-height: 0;
+        padding: 1mm;
+        color: var(--text);
+        background: transparent;
+        outline: none;
+    }
+
+    .contact {
+        margin-top: 4mm;
+        padding-top: 2mm;
+        break-inside: avoid;
+    }
+
+    .contact-actions {
+        display: block;
+    }
+
+    .contact a {
+        display: block;
+        min-height: 0;
+        padding: 0;
+        color: var(--text);
+        background: transparent;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+    }
+
+    .contact a::after {
+        content: " (" attr(href) ")";
+    }
+}

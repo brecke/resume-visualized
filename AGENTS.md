@@ -10,17 +10,19 @@ Read [README.md](README.md) for setup, commands and copy sources, and [ROADMAP.m
 
 | Path | Responsibility |
 | --- | --- |
-| `app/index.html` | Static current biography/contact/profile, metric guide, historical narrative, manual content-update date, matrix entry, and native disclosure shell. |
+| `app/index.html` | Static biography/contact, dated narrative/guide, manual update date, canonical/OG/card metadata, matrix and disclosure shell. |
 | `app/career.json` | Single source of dated career facts, declared coverage, discipline IDs/labels/colors, and completeness. |
 | `app/scripts/data.ts` | Typed data model, runtime validation, and exported `careerData`. |
 | `app/scripts/main.ts` | Semantic table, one button per year, exact selected-year details, native disclosure state/focus, and fine-pointer hover. |
-| `app/styles/main.css` | Editorial tokens, heatmap colors/hatching, comparable columns, sticky narrow-screen scrolling, scroll-padding and focus/touch states. |
+| `app/styles/main.css` | Screen editorial/matrix/focus tokens and native full-matrix/contact print CSS. |
 | `app/scripts/test/data.test.ts` | One deterministic Node built-in regression for the data contract and supplied dataset. |
 | `package.json`, `package-lock.json` | Pinned npm tooling, commands, and the single application dependency lockfile. |
 | `.nvmrc`, `tsconfig.json`, `vite.config.ts` | Node pin, strict type checking, relative-base Vite build from `app/` to `dist/`. |
-| `.github/workflows/ci.yml` | Pinned-runtime installation, type check, data regression, and production build. |
+| `.github/workflows/ci.yml` | One pinned check/build; master-only checked artifact and protected-environment Pages deployment, never PR deployment. |
 | `.gitignore` | Excludes dependencies, generated output, and local workflow artifacts. |
 | `images/desktop.webp`, `images/mobile.webp` | Repository-owned production references; update intentionally when design or visible copy changes. |
+| `app/public/` | Vite-copied favicon, 1200×630 real-matrix social PNG, standalone 404 and deployed legal notices. |
+| `LICENSE` | Owner-confirmed project MIT grant. |
 
 Runtime flow: `index.html` → `main.ts` → validated `career.json` → semantic table and native year details; CSS supplies native intensity mapping. Static introduction/contact survive script failure. The regression independently imports the data and validator. There is no canvas, Bower/Grunt pipeline, shared-global script wiring, or second renderer.
 
@@ -57,6 +59,10 @@ npm run preview
 - For data changes, retain the small deterministic regression for consumer-visible boundaries and invariants. Do not test source strings, incidental wording, or copies of implementation wiring.
 - For build changes, inspect generated assets at the intended deployment subpath. Keep scripts/dependencies local; no CDN injection as proof of an unmodified production build.
 - Report exactly which commands and surfaces were exercised. Do not claim remote CI, deployment, commits, or issue completion without actual evidence.
+- Canonical public URL is `https://brecke.github.io/resume-visualized/`; keep static canonical/OG/card image URLs and the absolute 404 home route aligned. Metadata must work without JavaScript.
+- Publishing data updates requires owner review, data/copy/manual-date alignment, actual production/print checks, intentional social PNG/reference refresh, a reviewed feature PR and observed master CI/Pages completion. Follow README; do not claim publication from local output.
+- Social PNG must contain the actual complete recorded matrix, owner name and honest estimated-share/period description. It is manually refreshed, not an automatic export. No custom share widget is needed over browser-native sharing.
+- Check actual PDF pagination and text extraction; no promise of a downloadable résumé. Keep owner/Vite/Rolldown notices in deployed output. MIT does not grant rights over referenced third-party sites/artwork.
 
 ## Contribution conventions
 
@@ -65,4 +71,4 @@ npm run preview
 - Update README commands and this map when changing the workflow. Track progress in the relevant GitHub issue, not a duplicate local checklist; satisfy its exit criteria before closing it.
 - Do not deploy, push, or commit to the default branch unless requested. Keep publication decisions explicit; local implementation is not a published release.
 - Do not commit `node_modules`, `dist/`, local `.a5c/` workflow state, or temporary smoke fixtures. A deliberate repository-owned social image/reference screenshot is a project asset.
-- Preserve author, palette, and inspiration notices. Do not create a root license grant without owner confirmation.
+- Preserve owner, palette, inspiration and deployed third-party notices. Project MIT is owner-confirmed in `LICENSE`; review any new dependency's deployed license obligations rather than inventing grants.

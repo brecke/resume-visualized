@@ -1,0 +1,78 @@
+Visual résumé — author, attribution, and deployed software notices
+
+Created by Miguel Laginha. The project is released under the MIT License
+with the owner's approval. The project grant is reproduced below so that
+it accompanies the deployed application as well as the source repository.
+
+Inspiration: David McCandless, The beauty of data visualization
+https://informationisbeautiful.net/2010/the-beauty-of-data-visualization/
+Original discipline palette attribution: Flat UI Colors
+http://flatuicolors.com/
+The removed historical gradient helper was attributed to JS Color Gradients
+http://aurer.co.uk/project/js-color-gradients/
+That helper is not part of the current application; native CSS supplies shading.
+These are attribution references, not a claim that those sites or their
+artwork are covered by the project's MIT grant. No artwork or fonts from
+these sites are included in the application.
+
+Build tooling and browser helper
+
+The pinned direct development dependencies are Vite 8.3.4 (MIT),
+TypeScript 7.0.2 (Apache-2.0), and @types/node 24.19.1 (MIT).
+The pinned runtime/toolchain is Node 24.21.0 and npm 12.2.0.
+There are no declared production npm dependencies. Node, npm, TypeScript,
+and Node type definitions are build/test tools, not deployed browser runtimes.
+Their full distribution notices remain with their respective installations.
+
+Vite's default production configuration enables its modulepreload polyfill.
+The installed Vite implementation delegates the bundled-build helper to
+Rolldown 1.2.13 (MIT). The Vite and Rolldown core grants are retained below
+for browser code emitted by this toolchain. This is not an exhaustive legal
+audit of the toolchain's own bundled/transitive dependencies: Vite's installed
+LICENSE.md separately lists Apache-2.0, BSD-2-Clause, CC0-1.0, ISC, and MIT
+licenses for its bundled build-tool dependencies; Rolldown's LICENSE refers
+to its upstream THIRD-PARTY-LICENSE. Those build-tool distributions are not
+copied wholesale into this static site.
+
+MIT License — project
+Copyright (c) Miguel Laginha
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+MIT License — Vite core and Rolldown
+Vite: Copyright (c) 2019-present, VoidZero Inc. and Vite contributors
+Rolldown: Copyright (c) 2024-present VoidZero Inc. & Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

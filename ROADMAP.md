@@ -45,6 +45,13 @@ Issue #4 separates the current owner-approved staff-engineer introduction from h
 
 Typecheck, the existing data regression and production build passed. Actual desktop/phone production checks exercised identity/metric/coverage/contact discovery, keyboard/touch details, unchanged numeric allocations, script-disabled content, a future clock and the real current-profile destination. Updated references remain in `images/`. This is structured content/interaction verification, not an independent human study; no email was sent. Public deployment and remote CI remain untested.
 
+## Share-ready release configuration
+
+Issue #5 selects GitHub Pages at `https://brecke.github.io/resume-visualized/` and extends the existing CI to deploy the same checked artifact only from master. Static canonical/OG/large-image metadata, a real-matrix social PNG, original favicon, standalone recovery page, native full-matrix print CSS and owner-confirmed MIT/deployed notices are implemented locally. Browser-native sharing covers the route without a custom widget.
+
+Local checks exercised all facts, static assets/metadata, one-page A4-landscape PDF, keyboard/touch, slow-phone layout stability and applicable WCAG 2.2 AA essentials. No physical-device, auditory screen-reader or conformance-certification claim. Public URL/client checks are pending approved stacked PRs, sequential merges and protected Pages deployment.
+
+
 
 
 ## Recommended technical direction
@@ -73,8 +80,8 @@ Phases 1–4 define the first release. Phase 5 is optional and does not block pu
 
 The metric, estimate wording, 2015 correction, current introduction, email/profile routes, display names and historical turning points are resolved. Current copy explicitly covers 2006–2016 only; later allocations require new owner-supplied records.
 
-The public URL/hosting account and reuse-license decision remain for #5. Do not infer those decisions from a successful local preview.
+GitHub Pages URL and owner MIT grant are resolved. Sequential review/merge and Pages setup/deployment still need the explicit publication gate; a local preview is not a live release.
 
 ## Next
 
-Publish the verified foundation, design and copy through the owner-approved contribution path, tracked in #2–#4, then complete production sharing and hosting (#5). Keep the recognizable matrix; do not turn release work into another framework migration.
+Publish the corrected-identity #2–#5 stack through one PR per issue and sequential merge commits, then verify the real URL, hosted social preview, phone/keyboard and PDF. Optional #6 work does not block release. Keep the recognizable matrix; do not turn publication into another framework migration.
