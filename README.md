@@ -35,9 +35,9 @@ npm run preview
 
 ## Publishing
 
-Chosen public URL: **https://miguellaginha.com/resume-visualized/**, the inherited domain returned by GitHub Pages and owner-approved. Deployment and real-client verification are pending; the root profile site and DNS are unchanged.
+Live URL: **https://miguellaginha.com/resume-visualized/**, the inherited domain returned by GitHub Pages and owner-approved. The root profile site and DNS are unchanged.
 
-The existing `.github/workflows/ci.yml` installs the pinned toolchain and runs `npm ci`, typecheck, the regression, and **one production build**. Only a non-PR `master` run uploads that exact `dist/` artifact. The dependent `github-pages` deployment job has scoped Pages/OIDC permissions; PRs do not deploy. Pages must be configured for GitHub Actions and its environment restricted to `master` before the first release merge. Manual workflow dispatch can redeploy `master` using the same checks/build. Remote CI has not yet been exercised.
+The existing `.github/workflows/ci.yml` installs the pinned toolchain and runs `npm ci`, typecheck, the regression, and **one production build**. Only a non-PR `master` run uploads that exact `dist/` artifact. The dependent `github-pages` job has scoped Pages/OIDC permissions; PRs do not deploy. Pages uses GitHub Actions with HTTPS enforced and its environment restricted to the `master` branch. [Launch CI and deployment](https://github.com/brecke/resume-visualized/actions/runs/37907196520) passed. Manual workflow dispatch can redeploy `master` using the same checks/build.
 
 To publish a data update:
 
@@ -50,7 +50,7 @@ To publish a data update:
 
 Static canonical, Open Graph and large-image card metadata are in `app/index.html`; the [social PNG](app/public/social-preview.png), original SVG favicon, recovery page and deployed notices live in `app/public/`. All are copied by Vite. The 404 recovery link uses the absolute project home so deep missing paths can recover. Browser-native sharing/address-bar copying supplies the share route; there is no custom clipboard/share widget.
 
-Use the browser's Print command. Native print CSS removes sticky/nested scrolling, keeps the complete matrix and legend, and prints contact/profile destinations. The verified Chromium **A4 landscape, background graphics enabled** PDF fits intro, 66 values, coverage/update date and contacts on one page. Other printer settings can paginate differently. This does not promise a downloadable résumé or automatic image export.
+Use the browser's Print command. Native print CSS removes sticky/nested scrolling and focus outlines, keeps the complete matrix and legend, and prints contact/profile destinations. The verified Chromium **A4 landscape, background graphics enabled** PDF fits intro, 66 values, coverage/update date and contacts on one page. Other printer settings can paginate differently. This does not promise a downloadable résumé or automatic image export.
 
 ## Career data
 
@@ -87,10 +87,11 @@ The introduction and contact were taken from Miguel's [published current profile
 - [Foundation #2](https://github.com/brecke/resume-visualized/issues/2): the implemented data/tooling/renderer cutover; publication status remains in the issue.
 - [Design #3](https://github.com/brecke/resume-visualized/issues/3): editorial layout, accessible responsive matrix, native year details, and reference screenshots.
 - [Copy #4](https://github.com/brecke/resume-visualized/issues/4): approved current biography/contact, estimated metric, honest dates, standardized labels, and record-backed turning points.
+- [Release #5](https://github.com/brecke/resume-visualized/issues/5): HTTPS Pages deployment, real fetched social cards, print and accessibility evidence.
 - [ROADMAP.md](ROADMAP.md): historical assessment, direction, and links to design, copy, and release work.
 - [AGENTS.md](AGENTS.md): repository map and AI-assisted contribution rules.
 
-Foundation, responsive design, approved copy and local release configuration are implemented. Public deployment and actual hosted-preview verification remain pending; publication status belongs in the linked issues.
+Foundation, responsive design, approved copy and the share-ready site are published through sequential merge-commit PRs. GitHub issues hold the canonical acceptance and publication evidence; optional #6 work is not a release dependency.
 
 ## Verification and attribution
 
@@ -103,6 +104,8 @@ The design/copy production HTML/CSS/JS loaded at `/resume-visualized/` without C
 The copy change passed typecheck, the existing regression, and production build. Actual **1366 × 900** desktop and **390 × 844** phone checks preserved all 66 allocations and 41 color endpoints, exercised keyboard/touch year details and contact discovery, and loaded the real current-profile destination. A simulated 2040 browser clock left coverage at 2006–2016 and the content-update date at 2026-10-08. Script-disabled copy/contact and actual subpath HTML/CSS/JS passed; no application runtime errors were observed. Computed text contrast remained at least 7.32:1 across 113 inspected elements. This was structured content/interaction verification, not an independent human usability study. The mailto URI matches the owner-published address; no email was sent or inbox delivery tested.
 
 Local release smoke preserved all numeric facts and checked static metadata with JavaScript disabled, image/favicon/notices/recovery assets, literal project-subpath loading, one-page PDF extraction/visual layout, touch/details, full keyboard scrolling, 320px reflow and requested text-spacing overrides. A throttled phone viewport (150ms latency, 62.5kB/s download, 4× CPU, cold cache) had observed CLS **0**, FCP about **0.47s** and LCP about **0.48s** across the local samples; these are not public-network benchmarks.
+
+Public release checks on **9 October 2026** verified HTTPS, static/script-disabled metadata, same-origin assets, favicon/notices, actual HTTP 404 and home recovery, all 66 values/41 color endpoints, trusted phone touch and keyboard, the current-profile destination and a one-page full-matrix PDF. [MetaTags.io fetched the real public URL](https://metatags.io/?url=https%3A%2F%2Fmiguellaginha.com%2Fresume-visualized%2F); its actual X/Facebook/LinkedIn/Slack preview cards used the 1200×630 PNG, with owner name, historical description and full matrix visible. This was a hosted inspector, not a message posted to those services. A cold-cache 390px public page under 150ms latency, 62.5kB/s download and 4× CPU had observed CLS **0**, FCP/LCP **0.552s**, no page overflow, and only own-origin application resources. These are individual emulated-browser samples, not field benchmarks.
 
 ### Accessibility audit scope
 

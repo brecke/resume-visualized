@@ -4,7 +4,7 @@
 
 This is Miguel Laginha's personal visual résumé: years form rows, work disciplines form columns, and color intensity represents estimated, exclusive shares of working time. Preserve the distinctive matrix rather than replacing it with a generic portfolio.
 
-Read [README.md](README.md) for setup, commands and copy sources, and [ROADMAP.md](ROADMAP.md) for historical context and direction. [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1) and its native sub-issues are the source of truth for tasks and acceptance criteria. Foundation, responsive design, and owner-reviewed copy are implemented locally; publication and release remain separate work. Implement only the requested issue.
+Read [README.md](README.md) for setup, commands and copy sources, and [ROADMAP.md](ROADMAP.md) for historical context and direction. [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1) and its native sub-issues are the source of truth for tasks and acceptance criteria. Foundation, responsive design, owner-reviewed copy and the share-ready site are published; implement only the requested issue, not speculative optional enhancements.
 
 ## Repository map
 
