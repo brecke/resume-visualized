@@ -31,9 +31,26 @@ npm run build
 npm run preview
 ```
 
-`build` writes `dist/`; `preview` serves that production output. To deploy, publish the **contents of `dist/`** to a static host, retaining `index.html` and `assets/` together. Relative asset URLs support a project subpath such as `/resume-visualized/`; verify HTML, CSS, JavaScript and the rendered matrix at the actual public URL. Do not publish source files or commit generated output. The public host/URL and deployment automation are not configured yet; [release #5](https://github.com/brecke/resume-visualized/issues/5) tracks that decision.
+`build` writes `dist/`; `preview` serves that production output. Relative assets support the `/resume-visualized/` project base. Do not publish source files or commit generated output.
 
-`.github/workflows/ci.yml` installs the pinned runtime/npm and runs installation, type checking, the data regression, and the production build. Remote CI has not been exercised.
+## Publishing
+
+Chosen public URL: **https://miguellaginha.com/resume-visualized/**, the inherited domain returned by GitHub Pages and owner-approved. Deployment and real-client verification are pending; the root profile site and DNS are unchanged.
+
+The existing `.github/workflows/ci.yml` installs the pinned toolchain and runs `npm ci`, typecheck, the regression, and **one production build**. Only a non-PR `master` run uploads that exact `dist/` artifact. The dependent `github-pages` deployment job has scoped Pages/OIDC permissions; PRs do not deploy. Pages must be configured for GitHub Actions and its environment restricted to `master` before the first release merge. Manual workflow dispatch can redeploy `master` using the same checks/build. Remote CI has not yet been exercised.
+
+To publish a data update:
+
+1. Obtain owner-approved facts; edit `app/career.json`. Align historical coverage, narrative, metadata and noscript copy in `app/index.html`, and manually update the content-review date.
+2. Run the development/check/build/preview commands above. Inspect phone/keyboard behavior and print to PDF; keep all rows, columns, legend, coverage and contact readable.
+3. Refresh `app/public/social-preview.png` when facts or visible copy change: render the **actual matrix**, owner name and short estimated-share/date description into a **1200 × 630 PNG**, retaining all six disciplines and eleven recorded years. Do not redraw invented values. Update owned desktop/phone references when screen appearance changes. This is a manual asset refresh, not an automatic export feature.
+4. Open a feature PR to `master`, review its CI results, and merge after approval. Observe the Pages job, then check the real HTTPS URL, asset/404 routes, phone/keyboard, PDF, and actual hosted link preview. A successful local build is not proof of publication.
+
+## Sharing and print
+
+Static canonical, Open Graph and large-image card metadata are in `app/index.html`; the [social PNG](app/public/social-preview.png), original SVG favicon, recovery page and deployed notices live in `app/public/`. All are copied by Vite. The 404 recovery link uses the absolute project home so deep missing paths can recover. Browser-native sharing/address-bar copying supplies the share route; there is no custom clipboard/share widget.
+
+Use the browser's Print command. Native print CSS removes sticky/nested scrolling, keeps the complete matrix and legend, and prints contact/profile destinations. The verified Chromium **A4 landscape, background graphics enabled** PDF fits intro, 66 values, coverage/update date and contacts on one page. Other printer settings can paginate differently. This does not promise a downloadable résumé or automatic image export.
 
 ## Career data
 
@@ -73,7 +90,7 @@ The introduction and contact were taken from Miguel's [published current profile
 - [ROADMAP.md](ROADMAP.md): historical assessment, direction, and links to design, copy, and release work.
 - [AGENTS.md](AGENTS.md): repository map and AI-assisted contribution rules.
 
-Foundation, responsive design, and owner-reviewed copy are implemented locally. Sharing assets and public deployment remain release work; publication status belongs in the linked issues.
+Foundation, responsive design, approved copy and local release configuration are implemented. Public deployment and actual hosted-preview verification remain pending; publication status belongs in the linked issues.
 
 ## Verification and attribution
 
@@ -81,8 +98,25 @@ The foundation passed clean-checkout installation, type checking, the determinis
 
 Computed text contrast was at least **7.32:1** across 107 inspected text elements; an achromatopsia simulation retained readable labels and exact values. The actual Chromium accessibility tree exposed the headings, captioned table, seven column headers, eleven row headers, 66 cells, and eleven year buttons. This checks semantic reading order, not an auditory VoiceOver/NVDA session or a WCAG certification. **200% layout zoom was emulated** using half the laptop's CSS viewport and double device scale, with scrolling and year details still usable.
 
-Final production HTML/CSS/JS loaded at `/resume-visualized/` without CDN requests or observed application runtime errors. A browser-initiated undeclared favicon 404 remains release work. Headed-browser touch automation timed out; trusted touch input succeeded in isolated headless Chromium. Temporary smoke builds, browser profiles, and services were removed. Remote CI and deployment have not been exercised.
+The design/copy production HTML/CSS/JS loaded at `/resume-visualized/` without CDN requests or observed application runtime errors. The previously undeclared favicon request is now replaced by a local explicit SVG favicon. Headed touch automation timed out in the design phase; trusted touch succeeded in isolated headless Chromium. Remote CI/deployment evidence is tracked separately from these local checks.
 
 The copy change passed typecheck, the existing regression, and production build. Actual **1366 × 900** desktop and **390 × 844** phone checks preserved all 66 allocations and 41 color endpoints, exercised keyboard/touch year details and contact discovery, and loaded the real current-profile destination. A simulated 2040 browser clock left coverage at 2006–2016 and the content-update date at 2026-10-08. Script-disabled copy/contact and actual subpath HTML/CSS/JS passed; no application runtime errors were observed. Computed text contrast remained at least 7.32:1 across 113 inspected elements. This was structured content/interaction verification, not an independent human usability study. The mailto URI matches the owner-published address; no email was sent or inbox delivery tested.
 
-The original MIT author notice is retained in `app/scripts/main.ts`; there is still no root license file. Confirm reuse licensing with the owner before promoting a template. Palette attribution remains in `data.ts` ([Flat UI Colors](http://flatuicolors.com/)). The removed gradient helper originated from [JS Color Gradients](http://aurer.co.uk/project/js-color-gradients/); native CSS now handles the shading. Reference screenshots are repository-owned rather than dependent on the unavailable original remote host.
+Local release smoke preserved all numeric facts and checked static metadata with JavaScript disabled, image/favicon/notices/recovery assets, literal project-subpath loading, one-page PDF extraction/visual layout, touch/details, full keyboard scrolling, 320px reflow and requested text-spacing overrides. A throttled phone viewport (150ms latency, 62.5kB/s download, 4× CPU, cold cache) had observed CLS **0**, FCP about **0.47s** and LCP about **0.48s** across the local samples; these are not public-network benchmarks.
+
+### Accessibility audit scope
+
+Applicable [WCAG 2.2 A/AA](https://www.w3.org/WAI/WCAG22/quickref/) essentials were inspected:
+
+| Criteria | Exercised evidence |
+| --- | --- |
+| 1.1.1, 1.3.1–2, 1.4.1 | Exact text values, named rows/columns, linked header IDs; actual AX tree exposes 7 column headers, 11 row headers and 66 cells. Color is not the sole encoding. |
+| 1.4.3, 1.4.11 | Computed text contrast ≥7.32:1 across 113 elements; 3px visible keyboard focus and selected state. Heatmap color is redundant to exact text. |
+| 1.4.4, 1.4.10, 1.4.12 | 320px page reflow without overflow; 200% layout emulation; prescribed spacing overrides without clipped text. The two-dimensional table has signposted internal scrolling. |
+| 1.4.13, 2.1.1–2, 2.4.3/7/11 | Native normal-flow disclosure, keyboard/touch equivalents, close behavior, forward/backward year order, last-column arrow access, non-occluded focus and no per-cell tab stops. |
+| 2.4.2/4/6, 3.1.1 | Meaningful static titles, English page language, headings, email/profile purpose and labelled recovery route. |
+| 2.5.1–3/8, 3.2.1–2, 4.1.2 | Native click/tap controls with matching visible names, ≥44px year/link targets, no navigation on focus, observed button/disclosure/link roles and expanded state. |
+
+There is no timed/media/animated content, form entry/authentication, dragging/motion input or repeated navigation block. This is a manual applicable-criterion audit, not an independent conformance certification. Phone/touch and 200% layouts are emulated Chromium surfaces; AX inspection is structural, not an auditory VoiceOver/NVDA session or physical-device test.
+
+The owner confirmed **[MIT](LICENSE)** for the repository. The original author notice is retained in `app/scripts/main.ts`; owner and emitted Vite/Rolldown grants are also shipped in [deployed notices](app/public/THIRD-PARTY-NOTICES.txt). Pinned build tools include MIT and Apache-2.0 licenses and retain their own distribution notices; this is not a legal audit of every bundled tool dependency. No third-party font/image/runtime package is served. Palette/inspiration and retired-gradient attribution remain in the source/notices; those references are not a grant over third-party websites/artwork. Replace the personal identity/contact/history before publishing a fork as your own.
