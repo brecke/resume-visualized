@@ -4,24 +4,25 @@
 
 This is Miguel Laginha's personal visual résumé: years form rows, work disciplines form columns, and color intensity represents exclusive shares of working time. Preserve the distinctive matrix rather than replacing it with a generic portfolio.
 
-Read [README.md](README.md) for setup and commands, and [ROADMAP.md](ROADMAP.md) for historical context and direction. [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1) and its native sub-issues are the source of truth for tasks and acceptance criteria. The foundation has been implemented; design, copy, and release remain separate work. Implement only the requested issue.
+Read [README.md](README.md) for setup and commands, and [ROADMAP.md](ROADMAP.md) for historical context and direction. [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1) and its native sub-issues are the source of truth for tasks and acceptance criteria. Foundation and responsive design are implemented locally; publication, owner-reviewed copy, and release remain separate work. Implement only the requested issue.
 
 ## Repository map
 
 | Path | Responsibility |
 | --- | --- |
-| `app/index.html` | Page entry, metric explanation, legend, and local module/style entry points. |
+| `app/index.html` | Static introduction/contact, metric/intensity guide, matrix entry, and native year-detail disclosure shell. |
 | `app/career.json` | Single source of dated career facts, declared coverage, discipline IDs/labels/colors, and completeness. |
 | `app/scripts/data.ts` | Typed data model, runtime validation, and exported `careerData`. |
-| `app/scripts/main.ts` | Semantic table renderer, exact percentage/unknown text, caption, and header relationships. |
-| `app/styles/main.css` | Heatmap colors, unknown hatching, content-sized layout, and focusable horizontal scrolling. |
+| `app/scripts/main.ts` | Semantic table, one button per year, exact selected-year details, native disclosure state/focus, and fine-pointer hover. |
+| `app/styles/main.css` | Editorial tokens, heatmap colors/hatching, comparable columns, sticky narrow-screen scrolling, scroll-padding and focus/touch states. |
 | `app/scripts/test/data.test.ts` | One deterministic Node built-in regression for the data contract and supplied dataset. |
 | `package.json`, `package-lock.json` | Pinned npm tooling, commands, and the single application dependency lockfile. |
 | `.nvmrc`, `tsconfig.json`, `vite.config.ts` | Node pin, strict type checking, relative-base Vite build from `app/` to `dist/`. |
 | `.github/workflows/ci.yml` | Pinned-runtime installation, type check, data regression, and production build. |
 | `.gitignore` | Excludes dependencies, generated output, and local workflow artifacts. |
+| `images/desktop.webp`, `images/mobile.webp` | Stable production reference screenshots; update intentionally when the design changes. |
 
-Runtime flow: `index.html` → `main.ts` → validated `career.json` → semantic table; CSS supplies native intensity mapping. The regression independently imports the data and validator. There is no canvas, Bower/Grunt pipeline, shared-global script wiring, or second renderer.
+Runtime flow: `index.html` → `main.ts` → validated `career.json` → semantic table and native year details; CSS supplies native intensity mapping. Static introduction/contact survive script failure. The regression independently imports the data and validator. There is no canvas, Bower/Grunt pipeline, shared-global script wiring, or second renderer.
 
 ## Data and visualization rules
 
@@ -47,7 +48,9 @@ npm run preview
 ```
 
 - `dev` serves source; `preview` serves the generated production build. A listening server or passing test alone does not prove the chart renders.
-- For visual changes, inspect the actual page on desktop and a 390px phone viewport, then resize. Exercise the full matrix, horizontal scrolling/focus, labels, missing-data states, and console/network diagnostics.
+- For visual changes, inspect actual 390px phone, laptop, wide-screen and 200% zoom layouts, then resize. Exercise all years/columns, forward **and backward** Tab navigation past sticky headers, arrow scrolling, tap/keyboard/hover year details, native disclosure/focus, unknown states, contrast and console/network diagnostics. Keep the underlying table readable and avoid per-cell tab stops.
+- Inspect actual accessibility-tree reading order and script-disabled intro/contact. State whether zoom is native or layout-emulated, and whether screen-reader evidence is structural or an auditory session; do not turn those checks into certification claims. No animation is needed.
+- When extending coverage with owner facts, also update the static historical-period copy and noscript message in `index.html`; never let the readable fallback contradict `career.json`.
 - For data changes, retain the small deterministic regression for consumer-visible boundaries and invariants. Do not test source strings, incidental wording, or copies of implementation wiring.
 - For build changes, inspect generated assets at the intended deployment subpath. Keep scripts/dependencies local; no CDN injection as proof of an unmodified production build.
 - Report exactly which commands and surfaces were exercised. Do not claim remote CI, deployment, commits, or issue completion without actual evidence.
