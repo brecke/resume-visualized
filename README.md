@@ -35,7 +35,7 @@ npm run preview
 
 ## Publishing
 
-Chosen public URL: **https://brecke.github.io/resume-visualized/**. Deployment and real-client verification are pending owner-approved publication; this is not yet a live-release claim.
+Chosen public URL: **https://miguellaginha.com/resume-visualized/**, the inherited domain returned by GitHub Pages and owner-approved. Deployment and real-client verification are pending; the root profile site and DNS are unchanged.
 
 The existing `.github/workflows/ci.yml` installs the pinned toolchain and runs `npm ci`, typecheck, the regression, and **one production build**. Only a non-PR `master` run uploads that exact `dist/` artifact. The dependent `github-pages` deployment job has scoped Pages/OIDC permissions; PRs do not deploy. Pages must be configured for GitHub Actions and its environment restricted to `master` before the first release merge. Manual workflow dispatch can redeploy `master` using the same checks/build. Remote CI has not yet been exercised.
 

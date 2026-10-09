@@ -47,7 +47,7 @@ Typecheck, the existing data regression and production build passed. Actual desk
 
 ## Share-ready release configuration
 
-Issue #5 selects GitHub Pages at `https://brecke.github.io/resume-visualized/` and extends the existing CI to deploy the same checked artifact only from master. Static canonical/OG/large-image metadata, a real-matrix social PNG, original favicon, standalone recovery page, native full-matrix print CSS and owner-confirmed MIT/deployed notices are implemented locally. Browser-native sharing covers the route without a custom widget.
+Issue #5 selects GitHub Pages at its actual inherited URL, `https://miguellaginha.com/resume-visualized/`, with owner approval and no root-site/DNS change. Existing CI deploys the same checked artifact only from master. Static canonical/OG/large-image metadata, a real-matrix social PNG, original favicon, standalone recovery page, native full-matrix print CSS and owner-confirmed MIT/deployed notices are implemented locally. Browser-native sharing covers the route without a custom widget.
 
 Local checks exercised all facts, static assets/metadata, one-page A4-landscape PDF, keyboard/touch, slow-phone layout stability and applicable WCAG 2.2 AA essentials. No physical-device, auditory screen-reader or conformance-certification claim. Public URL/client checks are pending approved stacked PRs, sequential merges and protected Pages deployment.
 

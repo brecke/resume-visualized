@@ -59,7 +59,7 @@ npm run preview
 - For data changes, retain the small deterministic regression for consumer-visible boundaries and invariants. Do not test source strings, incidental wording, or copies of implementation wiring.
 - For build changes, inspect generated assets at the intended deployment subpath. Keep scripts/dependencies local; no CDN injection as proof of an unmodified production build.
 - Report exactly which commands and surfaces were exercised. Do not claim remote CI, deployment, commits, or issue completion without actual evidence.
-- Canonical public URL is `https://brecke.github.io/resume-visualized/`; keep static canonical/OG/card image URLs and the absolute 404 home route aligned. Metadata must work without JavaScript.
+- Canonical public URL is `https://miguellaginha.com/resume-visualized/`, the owner-approved inherited Pages domain; keep static canonical/OG/card image URLs and the absolute 404 home route aligned. Metadata must work without JavaScript. Do not change root-site/DNS settings.
 - Publishing data updates requires owner review, data/copy/manual-date alignment, actual production/print checks, intentional social PNG/reference refresh, a reviewed feature PR and observed master CI/Pages completion. Follow README; do not claim publication from local output.
 - Social PNG must contain the actual complete recorded matrix, owner name and honest estimated-share/period description. It is manually refreshed, not an automatic export. No custom share widget is needed over browser-native sharing.
 - Check actual PDF pagination and text extraction; no promise of a downloadable résumé. Keep owner/Vite/Rolldown notices in deployed output. MIT does not grant rights over referenced third-party sites/artwork.
