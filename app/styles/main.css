@@ -1,14 +1,90 @@
-body {
-    background: #fafafa;
+:root {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    background: #fafafa;
 }
 
-html, body {
-  margin: 5px;
+* {
+    box-sizing: border-box;
 }
 
-#container {
-	width: 100%;
-	margin: 0 auto;
+body {
+    margin: 10px;
+}
+
+#legend,
+#scroll-help {
+    max-width: 70ch;
+    margin: 12px 15px;
+    line-height: 1.5;
+}
+
+#scroll-help {
+    font-size: 0.875rem;
+}
+
+.matrix-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.matrix-scroll:focus-visible {
+    outline: 2px solid #187bbf;
+    outline-offset: -2px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 30px 10px;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+}
+
+caption {
+    padding: 10px 30px;
+    color: #24282b;
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+thead th {
+    height: 50px;
+    color: #fff;
+    background: #2d2d2d;
+    font-weight: normal;
+}
+
+tbody th {
+    color: #24282b;
+    font-weight: normal;
+    text-align: right;
+}
+
+.year-status {
+    display: block;
+    font-size: 0.75rem;
+}
+
+td {
+    height: 40px;
+    background: color-mix(in srgb, var(--discipline-color) var(--allocation), #fff);
+}
+
+.allocation {
+    display: inline-block;
+    padding: 2px 5px;
+    color: #24282b;
+    background: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+td.unknown {
+    background: repeating-linear-gradient(135deg, #e6e6e6 0 4px, #fafafa 4px 8px);
 }

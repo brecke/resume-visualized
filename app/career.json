@@ -1,0 +1,24 @@
+{
+  "coverage": { "startYear": 2006, "endYear": 2016 },
+  "disciplines": [
+    { "id": "java", "name": "Java programmer", "color": "#91c847" },
+    { "id": "rails", "name": "Rails programmer", "color": "#91c847" },
+    { "id": "project-management", "name": "Project manager", "color": "#2cade2" },
+    { "id": "architecture", "name": "Software architect", "color": "#f79929" },
+    { "id": "python", "name": "Python developer", "color": "#f26336" },
+    { "id": "full-stack-js", "name": "Full-stack js developer", "color": "#c22938" }
+  ],
+  "years": [
+    { "year": 2006, "complete": true, "allocations": { "java": 100, "rails": 0, "project-management": 0, "architecture": 0, "python": 0, "full-stack-js": 0 } },
+    { "year": 2007, "complete": true, "allocations": { "java": 100, "rails": 0, "project-management": 0, "architecture": 0, "python": 0, "full-stack-js": 0 } },
+    { "year": 2008, "complete": true, "allocations": { "java": 60, "rails": 30, "project-management": 10, "architecture": 0, "python": 0, "full-stack-js": 0 } },
+    { "year": 2009, "complete": true, "allocations": { "java": 0, "rails": 50, "project-management": 20, "architecture": 30, "python": 0, "full-stack-js": 0 } },
+    { "year": 2010, "complete": true, "allocations": { "java": 0, "rails": 40, "project-management": 30, "architecture": 30, "python": 0, "full-stack-js": 0 } },
+    { "year": 2011, "complete": true, "allocations": { "java": 0, "rails": 0, "project-management": 10, "architecture": 70, "python": 20, "full-stack-js": 0 } },
+    { "year": 2012, "complete": true, "allocations": { "java": 0, "rails": 0, "project-management": 10, "architecture": 70, "python": 20, "full-stack-js": 0 } },
+    { "year": 2013, "complete": true, "allocations": { "java": 0, "rails": 0, "project-management": 10, "architecture": 70, "python": 20, "full-stack-js": 0 } },
+    { "year": 2014, "complete": true, "allocations": { "java": 0, "rails": 0, "project-management": 10, "architecture": 80, "python": 10, "full-stack-js": 0 } },
+    { "year": 2015, "complete": true, "allocations": { "java": 20, "rails": 0, "project-management": 0, "architecture": 50, "python": 10, "full-stack-js": 20 } },
+    { "year": 2016, "complete": true, "allocations": { "java": 0, "rails": 0, "project-management": 0, "architecture": 0, "python": 0, "full-stack-js": 100 } }
+  ]
+}
