@@ -2,15 +2,15 @@
 
 ## Purpose and scope
 
-This is Miguel Laginha's personal visual résumé: years form rows, work disciplines form columns, and color intensity represents exclusive shares of working time. Preserve the distinctive matrix rather than replacing it with a generic portfolio.
+This is Miguel Laginha's personal visual résumé: years form rows, work disciplines form columns, and color intensity represents estimated, exclusive shares of working time. Preserve the distinctive matrix rather than replacing it with a generic portfolio.
 
-Read [README.md](README.md) for setup and commands, and [ROADMAP.md](ROADMAP.md) for historical context and direction. [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1) and its native sub-issues are the source of truth for tasks and acceptance criteria. Foundation and responsive design are implemented locally; publication, owner-reviewed copy, and release remain separate work. Implement only the requested issue.
+Read [README.md](README.md) for setup, commands and copy sources, and [ROADMAP.md](ROADMAP.md) for historical context and direction. [GitHub epic #1](https://github.com/brecke/resume-visualized/issues/1) and its native sub-issues are the source of truth for tasks and acceptance criteria. Foundation, responsive design, and owner-reviewed copy are implemented locally; publication and release remain separate work. Implement only the requested issue.
 
 ## Repository map
 
 | Path | Responsibility |
 | --- | --- |
-| `app/index.html` | Static introduction/contact, metric/intensity guide, matrix entry, and native year-detail disclosure shell. |
+| `app/index.html` | Static current biography/contact/profile, metric guide, historical narrative, manual content-update date, matrix entry, and native disclosure shell. |
 | `app/career.json` | Single source of dated career facts, declared coverage, discipline IDs/labels/colors, and completeness. |
 | `app/scripts/data.ts` | Typed data model, runtime validation, and exported `careerData`. |
 | `app/scripts/main.ts` | Semantic table, one button per year, exact selected-year details, native disclosure state/focus, and fine-pointer hover. |
@@ -20,19 +20,22 @@ Read [README.md](README.md) for setup and commands, and [ROADMAP.md](ROADMAP.md)
 | `.nvmrc`, `tsconfig.json`, `vite.config.ts` | Node pin, strict type checking, relative-base Vite build from `app/` to `dist/`. |
 | `.github/workflows/ci.yml` | Pinned-runtime installation, type check, data regression, and production build. |
 | `.gitignore` | Excludes dependencies, generated output, and local workflow artifacts. |
-| `images/desktop.webp`, `images/mobile.webp` | Stable production reference screenshots; update intentionally when the design changes. |
+| `images/desktop.webp`, `images/mobile.webp` | Repository-owned production references; update intentionally when design or visible copy changes. |
 
 Runtime flow: `index.html` → `main.ts` → validated `career.json` → semantic table and native year details; CSS supplies native intensity mapping. Static introduction/contact survive script failure. The regression independently imports the data and validator. There is no canvas, Bower/Grunt pipeline, shared-global script wiring, or second renderer.
 
 ## Data and visualization rules
 
 - Do not invent career history, percentages, achievements, contact details, or data after 2016. Ask for owner facts only when the requested work needs information absent from the repository.
-- Percentages are exclusive working-time shares, not expertise scores. Complete years have no nulls and total 100%; incomplete years have known totals at most 100% and may contain nulls. Keep the validator's floating-point tolerance.
+- Percentages are owner-confirmed estimates of exclusive working-time shares, not expertise scores. Complete years have no nulls and total 100%; incomplete years have known totals at most 100% and may contain nulls. Keep the validator's floating-point tolerance.
 - The owner approved the 2015 architecture correction from 70% to 50%, preserving other values. Do not normalize other allocations or change facts just to pass a check.
 - `coverage` is inclusive and data-driven. Every covered year needs one explicit record with exactly the declared discipline IDs. For unknown years, use incomplete records with nulls—not invented zeros or omitted gaps.
 - Preserve recorded zero versus unknown, chronological order, discipline labels/order, and per-discipline colors. Zero is white; 100% is the exact base color; unknown is labelled and hatched.
 - Trace rendering and validation consumers before changing exports, data shape, coverage, or color calculation. Update both paths together; never introduce a parallel source of career data.
 - Keep exact values readable as text with caption and row/column headers. Color and hover must not be the only ways to read the chart. Keyboard and touch need access to the same information.
+- Current biography/contact are owner-approved from [Miguel's published profile](https://miguellaginha.com/). The primary mailto address is `me@miguellaginha.com`; the secondary route is that real profile, not an invented résumé download. New factual claims and label changes need owner review.
+- Keep the current biography distinct from historical 2006–2016 allocations. Static turning points in `index.html` describe existing records only; do not infer employers, projects, outcomes, or the cause of a change.
+- The `<time>` in `index.html` is a manually maintained content-update date, currently 2026-10-08. Change it only for an actual content review/update, not every build or deployment. It never extends chart coverage.
 
 ## Working and checking
 

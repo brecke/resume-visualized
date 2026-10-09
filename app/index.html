@@ -3,25 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Miguel Laginha — Resume visualized</title>
-        <meta name="description" content="Miguel Laginha’s visual résumé of recorded working-time shares across disciplines, 2006–2016.">
+        <title>Miguel Laginha — A career, visualized</title>
+        <meta name="description" content="Miguel Laginha, staff software engineer and technical lead. Explore estimated working-time shares across disciplines, 2006–2016.">
         <link rel="stylesheet" href="./styles/main.css">
         <script type="module" src="./scripts/main.ts"></script>
     </head>
     <body>
         <main>
             <header class="intro">
-                <p class="eyebrow">Visual résumé · 2006–2016</p>
+                <p class="eyebrow">A career, visualized</p>
                 <h1>Miguel Laginha</h1>
-                <p class="intro-text">A historical view of working time, year by year and discipline by discipline.</p>
+                <p class="intro-text">Staff software engineer and technical lead. I build web products across the stack, with a particular interest in backend systems.</p>
             </header>
 
             <section aria-labelledby="matrix-heading">
-                <h2 id="matrix-heading">Years × disciplines</h2>
+                <h2 id="matrix-heading">How my work shifted · 2006–2016</h2>
+                <p class="coverage-note">This chart is historical: it covers 2006–2016, not my current work mix. Content updated <time datetime="2026-10-08">8 October 2026</time>.</p>
                 <div class="legend">
                     <p id="legend">
-                        Percentages are exclusive shares of working time, not proficiency.
-                        Column labels identify disciplines, retaining their historical colors; intensity shows the share.
+                        Each row is a year; each column is a discipline. Percentages are estimated, exclusive shares of working time—not proficiency.
+                        Column labels identify disciplines; stronger color means a larger share.
                         White means a recorded 0%; full discipline color means 100%.
                         Hatched cells marked “Unknown” have no recorded value.
                     </p>
@@ -47,9 +48,23 @@
                 </details>
             </section>
 
+            <section class="turning-points" aria-labelledby="turning-points-heading">
+                <h2 id="turning-points-heading">Three shifts in the recorded years</h2>
+                <ol>
+                    <li><strong>2008.</strong> The chart broadens from Java-only allocations to include Rails development and project management.</li>
+                    <li><strong>2011–2014.</strong> Software architecture takes the largest share, alongside project management and Python development.</li>
+                    <li><strong>2016.</strong> The recorded allocation is entirely full-stack JavaScript development.</li>
+                </ol>
+                <p>These turning points describe the estimated allocations above. They are not a list of employers or projects, and do not extend the history beyond 2016.</p>
+            </section>
+
             <footer class="contact" aria-labelledby="contact-heading">
                 <h2 id="contact-heading">Contact</h2>
-                <a href="https://github.com/brecke">Find Miguel on GitHub <span aria-hidden="true">↗</span></a>
+                <p>For a conversation about engineering work, email me. My current profile is separate from this historical chart.</p>
+                <p class="contact-actions">
+                    <a class="primary-contact" href="mailto:me@miguellaginha.com">Get in touch <span aria-hidden="true">↗</span></a>
+                    <a href="https://miguellaginha.com/">Current profile <span aria-hidden="true">↗</span></a>
+                </p>
             </footer>
         </main>
     </body>

@@ -94,7 +94,7 @@ function syncExpanded() {
 function selectYear(record: (typeof careerData.years)[number]) {
     selectedYear = record.year;
     detailHeading.textContent = `${record.year} · Working-time shares`;
-    detailContext.textContent = `Record status: ${record.complete ? 'complete' : 'partial'}. Percentages are exclusive shares of working time, not proficiency. Recorded coverage: ${careerData.coverage.startYear}–${careerData.coverage.endYear}.`;
+    detailContext.textContent = `Record status: ${record.complete ? 'complete' : 'partial'}. Percentages are estimated, exclusive shares of working time, not proficiency. Historical coverage: ${careerData.coverage.startYear}–${careerData.coverage.endYear}.`;
     detailValues.replaceChildren();
     for (const discipline of careerData.disciplines) {
         const pair = document.createElement('div');
