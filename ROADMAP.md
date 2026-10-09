@@ -31,7 +31,7 @@ Issue #2 replaces the legacy pipeline with Vite, vanilla TypeScript, npm, one ap
 
 The owner confirmed **exclusive working-time shares**, not proficiency, and corrected 2015 architecture from 70% to 50% (20 percentage points), leaving other allocations intact. Explicit records retain 2006–2016 coverage. Complete years total 100%; incomplete years may contain nulls or partial totals at most 100%. Unknown is distinct from recorded zero, and missing covered years require explicit unknown records.
 
-Local installation, type checking, the deterministic data regression, and production build passed. Real browser checks exercised desktop/390px phone layout, keyboard scrolling, resize, all recorded values and zero/full color endpoints, a future clock, unknown/partial data, and actual production assets at `/resume-visualized/`. Remote CI and deployment were not exercised. These results replace the foundation failures above; they do not complete the owner-reviewed copy or release phases.
+Local installation, type checking, the deterministic data regression, and production build passed. Real browser checks exercised desktop/390px phone layout, keyboard scrolling, resize, all recorded values and zero/full color endpoints, a future clock, unknown/partial data, and actual production assets at `/resume-visualized/`. Remote CI and deployment were not exercised in this initial phase; the release evidence below covers subsequent publication.
 
 ## Responsive design implementation
 
@@ -43,13 +43,13 @@ Actual phone, laptop, wide-screen, resize, native touch/keyboard/hover, unknown/
 
 Issue #4 separates the current owner-approved staff-engineer introduction from historical 2006–2016 allocations. Biography and email/current-profile routes are sourced from [Miguel's published profile](https://miguellaginha.com/); the owner confirmed estimated working-time shares and standardized discipline display names. Three turning points describe only existing records, without invented employers, projects or later work. The fixed content-update date is 2026-10-08, not a build timestamp.
 
-Typecheck, the existing data regression and production build passed. Actual desktop/phone production checks exercised identity/metric/coverage/contact discovery, keyboard/touch details, unchanged numeric allocations, script-disabled content, a future clock and the real current-profile destination. Updated references remain in `images/`. This is structured content/interaction verification, not an independent human study; no email was sent. Public deployment and remote CI remain untested.
+Typecheck, the existing data regression and production build passed. Actual desktop/phone production checks exercised identity/metric/coverage/contact discovery, keyboard/touch details, unchanged numeric allocations, script-disabled content, a future clock and the real current-profile destination. Updated references remain in `images/`. This is structured content/interaction verification, not an independent human study; no email was sent. Subsequent remote publication is recorded below.
 
-## Share-ready release configuration
+## Share-ready public release
 
-Issue #5 selects GitHub Pages at its actual inherited URL, `https://miguellaginha.com/resume-visualized/`, with owner approval and no root-site/DNS change. Existing CI deploys the same checked artifact only from master. Static canonical/OG/large-image metadata, a real-matrix social PNG, original favicon, standalone recovery page, native full-matrix print CSS and owner-confirmed MIT/deployed notices are implemented locally. Browser-native sharing covers the route without a custom widget.
+Issue #5 publishes through GitHub Pages at its actual inherited URL, **https://miguellaginha.com/resume-visualized/**, with owner approval and no root-site/DNS change. Existing CI deploys the same checked artifact only from master to a branch-restricted environment; HTTPS is enforced. Static canonical/OG/large-image metadata, a real-matrix social PNG, original favicon, standalone recovery page, full-matrix print CSS and owner-confirmed MIT/deployed notices are shipped. Browser-native sharing covers the route without a custom widget.
 
-Local checks exercised all facts, static assets/metadata, one-page A4-landscape PDF, keyboard/touch, slow-phone layout stability and applicable WCAG 2.2 AA essentials. No physical-device, auditory screen-reader or conformance-certification claim. Public URL/client checks are pending approved stacked PRs, sequential merges and protected Pages deployment.
+The #2–#5 PRs merged sequentially; [launch checks and Pages deployment passed](https://github.com/brecke/resume-visualized/actions/runs/37907196520). Actual public checks exercised static metadata/assets, true HTTP 404 recovery, all facts, trusted emulated-phone touch/keyboard and a one-page A4-landscape PDF with complete values and contacts. MetaTags.io fetched the real URL and rendered the owned PNG in its X/Facebook/LinkedIn/Slack preview cards; no message was posted. The public slow-phone sample observed CLS 0 and FCP/LCP 0.552s. README records audit scope and publishing steps. No physical-device, auditory screen-reader, field-performance or conformance-certification claim.
 
 
 
@@ -80,8 +80,8 @@ Phases 1–4 define the first release. Phase 5 is optional and does not block pu
 
 The metric, estimate wording, 2015 correction, current introduction, email/profile routes, display names and historical turning points are resolved. Current copy explicitly covers 2006–2016 only; later allocations require new owner-supplied records.
 
-GitHub Pages URL and owner MIT grant are resolved. Sequential review/merge and Pages setup/deployment still need the explicit publication gate; a local preview is not a live release.
+The actual inherited GitHub Pages URL, HTTPS, owner MIT grant and publication approvals are resolved. The mandatory first-release stack is merged and deployed; inspect actual CI and public behavior again for every subsequent update.
 
 ## Next
 
-Publish the corrected-identity #2–#5 stack through one PR per issue and sequential merge commits, then verify the real URL, hosted social preview, phone/keyboard and PDF. Optional #6 work does not block release. Keep the recognizable matrix; do not turn publication into another framework migration.
+Evaluate optional #6 enhancements only when there is a concrete need. Publish owner-reviewed data/copy changes through a feature PR to master, observed checked-artifact deployment and the README's real-URL verification process. Keep the recognizable matrix; do not turn maintenance into another framework migration.

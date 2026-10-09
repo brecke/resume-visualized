@@ -411,6 +411,10 @@ a {
         max-width: none;
     }
 
+    :focus-visible {
+        outline: none;
+    }
+
     .eyebrow,
     .legend-samples {
         font-size: 9pt;
